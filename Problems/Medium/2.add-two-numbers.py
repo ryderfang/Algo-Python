@@ -14,40 +14,30 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         carry = 0
         sum = 0
-        result = ListNode()
-        nxt = result
-        while l1 != None and l2 != None:
-            p = nxt
-            sum = l1.val + l2.val + carry
-            if sum < 10:
-                p.val = sum
-                carry = 0
+        result = l1
+        last = l1
+        while l1 != None:
+            if l2 != None:
+                sum = l1.val + l2.val + carry
+                l2 = l2.next
             else:
-                p.val = sum % 10
-                carry = 1
-            nxt = ListNode()
-            p.next = nxt
+                sum = l1.val + carry
+            l1.val = sum % 10
+            carry = 1 if sum >= 10 else 0
+            last = l1
             l1 = l1.next
+        if l2 != None:
+            last.next = l2
+        while l2 != None:
+            sum = l2.val + carry
+            l2.val = sum % 10
+            carry = 1 if sum >= 10 else 0
+            last = l2
             l2 = l2.next
-        last = l1 if l1 != None else l2
-        while last != None:
-            p = nxt
-            sum = last.val + carry
-            if sum < 10:
-                p.val = sum
-                carry = 0
-            else:
-                p.val = sum % 10
-                carry = 1
-            nxt = ListNode()
-            p.next = nxt
-            last = last.next
         if carry > 0:
-            p = nxt
-            p.val = carry
-            p.next = None
-        else:
-            p.next = None
+            temp = ListNode()
+            temp.val = carry
+            last.next = temp
         return result
 
 # @lc code=end
