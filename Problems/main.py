@@ -13,4 +13,4 @@ for member in inspect.getmembers(module):
 
 if __name__ == "__main__":
     sol = cls()
-    print(sol.lengthOfLongestSubstring('bbbbbb'))
+    print(sol.lengthOfLongestSubstring('abcabcbb'))
