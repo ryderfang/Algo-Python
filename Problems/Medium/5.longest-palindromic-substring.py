@@ -6,38 +6,27 @@
 
 # @lc code=start
 class Solution:
-    def __init__(self):
-        self.ans = 1
-        self.beg = self.end = 0
-    
-    def checkPalindrome(self, s: str, p: int, q: int):
+    def expandAroundCenter(self, s: str, left: int, right: int):
         sz = len(s)
-        if p >= 0 and q < sz and self.dp[p][q]:
-            return
-        while p >= 0 and q < sz:
-            if s[p] == s[q]:
-                self.dp[p][q] = 1
-                if q - p + 1 > self.ans:
-                    self.ans = q - p + 1
-                    self.beg = p
-                    self.end = q
-                p -= 1
-                q += 1
-            else:
-                break
+        while left >= 0 and right < sz and s[left] == s[right]:
+            left -= 1
+            right += 1
+        # 这里长度计算要注意，left--和right++之后才计算的
+        return (right - left - 1)
 
     def longestPalindrome(self, s: str) -> str:
         sz = len(s)
-        self.dp = [[0 for i in range(sz)] for j in range(sz)]
+        beg = end = 0
         for i in range(sz):
-            # [i-1, i]
-            self.checkPalindrome(s, i - 1, i)
-            # [i, i+1]
-            self.checkPalindrome(s, i, i + 1)
-            # [i-1, i+1]
-            self.checkPalindrome(s, i - 1, i + 1)
-        print(self.ans)
-        result = s[self.beg:self.end+1]
+            # 以 i 为中心的奇回文串
+            len1 = self.expandAroundCenter(s, i, i)
+            # 以 i,i+1 为中心的偶回文串
+            len2 = self.expandAroundCenter(s, i, i + 1)
+            length = max(len1, len2)
+            if length > end - beg:
+                beg = i - (length - 1) // 2
+                end = i + length // 2
+        result = s[beg:end+1]
         return result
 
 # @lc code=end
