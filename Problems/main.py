@@ -3,8 +3,8 @@ import inspect
 import os
 
 os.chdir(os.path.dirname(__file__))
-file_name = '6.zig-zag-conversion.py'
-spec = importlib.util.spec_from_file_location(file_name, os.getcwd() + '/Medium/' + file_name)
+file_name = '8.string-to-integer-atoi'
+spec = importlib.util.spec_from_file_location(file_name + '.py', os.getcwd() + '/Medium/' + file_name + '.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
@@ -15,6 +15,10 @@ for member in inspect.getmembers(module):
 
 if __name__ == "__main__":
     sol = cls()
-    print(sol.convert("PAYPALISHIRING", 3))
-    print(sol.convert("PAYPALISHIRING", 4))
-    print(sol.convert("P", 2))
+    print(sol.myAtoi("42"))
+    print(sol.myAtoi("   -42"))
+    print(sol.myAtoi("4193 with words"))
+    print(sol.myAtoi("words and 987"))
+    print(sol.myAtoi("-91283472332"))
+    print(sol.myAtoi("91283472332"))
+    print(sol.myAtoi("+-12"))
