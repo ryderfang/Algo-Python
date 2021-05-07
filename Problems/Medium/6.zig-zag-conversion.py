@@ -6,26 +6,25 @@
 
 # @lc code=start
 class Solution:
+    # k -> 2*(r-1)-k -> 4*(r-1)-k -> 6*(r-1)-k
     def convert(self, s: str, numRows: int) -> str:
         sz = len(s)
-        col = 1000
-        if numRows == 1:
+        r = numRows
+        if r == 1:
             return s
-        mp = [["" for i in range(col)] for j in range(numRows)]
-        r, c = 0, 0
-        for x in range(sz):
-            mp[r][c] = s[x]
-            if (x // (numRows - 1)) & 1:
-                r -= 1
-                c += 1
-            else:
-                r += 1
         ans = ""
-        col = c + 1
-        for i in range(numRows):
-            for j in range(col):
-                if len(mp[i][j]) > 0:
-                    ans += mp[i][j]
+        for i in range(r):
+            if i >= sz:
+                break
+            ans += s[i]
+            fact = 2
+            while (idx := fact * (r - 1) - i) and idx < sz:
+                if i != 0 and i != r - 1:
+                    ans += s[idx]
+                idx = fact * (r - 1) + i
+                if idx < sz:
+                    ans += s[idx]
+                fact += 2
         return ans
 
 # @lc code=end

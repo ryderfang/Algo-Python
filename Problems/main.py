@@ -17,3 +17,4 @@ if __name__ == "__main__":
     sol = cls()
     print(sol.convert("PAYPALISHIRING", 3))
     print(sol.convert("PAYPALISHIRING", 4))
+    print(sol.convert("P", 2))
