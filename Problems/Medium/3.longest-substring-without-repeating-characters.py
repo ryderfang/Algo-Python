@@ -17,7 +17,7 @@ class Solution:
         return ans
 # @lc code=end
 
-# @ comment
+# @lc comment
 """
 ord 字符转换成 unicode 整数
 chars/map 记录当前字符出现的位置

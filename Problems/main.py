@@ -1,10 +1,15 @@
 import importlib.util
 import inspect
-import os
+import glob, os
+
+PROBLEM_NO = 11
+PROBLEM_LV = '/Medium/'
 
 os.chdir(os.path.dirname(__file__))
-file_name = '8.string-to-integer-atoi'
-spec = importlib.util.spec_from_file_location(file_name + '.py', os.getcwd() + '/Medium/' + file_name + '.py')
+file_path = glob.glob(os.getcwd() + PROBLEM_LV + str(PROBLEM_NO) + '.*.py')[0]
+print(file_path)
+
+spec = importlib.util.spec_from_file_location(os.path.basename(file_path), file_path)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
@@ -15,10 +20,8 @@ for member in inspect.getmembers(module):
 
 if __name__ == "__main__":
     sol = cls()
-    print(sol.myAtoi("42"))
-    print(sol.myAtoi("   -42"))
-    print(sol.myAtoi("4193 with words"))
-    print(sol.myAtoi("words and 987"))
-    print(sol.myAtoi("-91283472332"))
-    print(sol.myAtoi("91283472332"))
-    print(sol.myAtoi("+-12"))
+    print(sol.maxArea([1,8,6,2,5,4,8,3,7]))
+    print(sol.maxArea([1,1]))
+    print(sol.maxArea([4,3,2,1,4]))
+    print(sol.maxArea([1,2,1]))
+    print(sol.maxArea([2, 1]))
