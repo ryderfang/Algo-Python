@@ -20,4 +20,6 @@ for member in inspect.getmembers(module):
 
 if __name__ == "__main__":
     sol = cls()
-    print(sol.threeSum([1]))
+    print(sol.threeSum([-1,0,1,2,-1,-4]))
+    print(sol.threeSum([]))
+    print(sol.threeSum([0]))
