@@ -6,6 +6,6 @@ My leetcode solutions.
 
 * Target: solve all medium problems.
 
-* Progress: 7/1073
+* Progress: 9/1073
 
 🤟

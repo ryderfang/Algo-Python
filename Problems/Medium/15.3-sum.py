@@ -16,6 +16,9 @@ class Solution:
         for i in range(sz-2):
             if i > 0 and nums[i] == nums[i-1]:
                 continue
+            # opt
+            if nums[i] > 0:
+                break
             p, q = i + 1, sz - 1
             while p < q:
                 total = nums[i] + nums[p] + nums[q]
@@ -25,6 +28,8 @@ class Solution:
                     q -= 1
                     while p < q and nums[p] == nums[p-1]:
                         p += 1
+                    while q > p and nums[q] == nums[q+1]:
+                        q -= 1
                 elif total > 0:
                     q -= 1
                 else:
