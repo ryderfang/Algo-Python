@@ -12,25 +12,23 @@ class Solution:
             return []
         sz = len(nums)
         nums.sort()
-        st = set()
-        for i in range(sz):
-            p, q = i - 1, i + 1
-            while p >= 0 and q < sz:
+        ans = []
+        for i in range(sz-2):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            p, q = i + 1, sz - 1
+            while p < q:
                 total = nums[i] + nums[p] + nums[q]
                 if total == 0:
-                    st.add(str(nums[p]) + ',' + str(nums[i]) + ',' + str(nums[q]))
-                    p -= 1
-                    q += 1
+                    ans.append([nums[i], nums[p], nums[q]])
+                    p += 1
+                    q -= 1
+                    while p < q and nums[p] == nums[p-1]:
+                        p += 1
                 elif total > 0:
-                    p -= 1
+                    q -= 1
                 else:
-                    q += 1
-        ans = []
-        for x in st:
-            tmp = x.split(',')
-            for i in range(len(tmp)):
-                tmp[i] = int(tmp[i])
-            ans.append(tmp)
+                    p += 1
         return ans
 
         
