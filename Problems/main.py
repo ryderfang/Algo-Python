@@ -2,7 +2,7 @@ import importlib.util
 import inspect
 import glob, os
 
-PROBLEM_NO = 17
+PROBLEM_NO = 18
 PROBLEM_LV = '/Medium/'
 
 os.chdir(os.path.dirname(__file__))
@@ -20,5 +20,5 @@ for member in inspect.getmembers(module):
 
 if __name__ == "__main__":
     sol = cls()
-    print(sol.letterCombinations('2759'))
-    print(sol.letterCombinations(''))
+    print(sol.fourSum([1,0,-1,0,-2,2], 0))
+    print(sol.fourSum([2,2,2,2,2], 8))
