@@ -2,8 +2,9 @@ import importlib.util
 import inspect
 import glob, os
 from util import ListNode
+import json
 
-PROBLEM_NO = 24
+PROBLEM_NO = 1856
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -22,9 +23,23 @@ def load_module():
             cls = member[1]
             break
 
+def load_testcase():
+    test_file = os.getcwd() + '/../Testcase/t' + str(PROBLEM_NO)
+    lines = []
+    with open(test_file) as f:
+        lines = f.readlines()
+    ans = []
+    for l in lines:
+        ans.append(json.loads(l))
+    return ans
+
+
 if __name__ == "__main__":
     load_module()
     sol = cls()
-    head = ListNode.node_linked_list([1, 2, 3, 4, 7, 8, 9])
-    print(ListNode.list(sol.swapPairs(head)))
+    cases = load_testcase()
+    for x in cases:
+        # 631781618
+        print(len(x))
+        print(sol.maxSumMinProduct(x))
 
