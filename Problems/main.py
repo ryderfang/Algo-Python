@@ -42,6 +42,6 @@ if __name__ == "__main__":
         # 50
         # case1 631781618
         # case2 980357007
-        print(len(x))
+        # print(len(x))
         print(sol.maxSumMinProduct(x))
 
