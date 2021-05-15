@@ -10,21 +10,33 @@ INF = 10 ** 9 + 7
 from typing import List
 class Solution:
     def maxSumMinProduct(self, nums: List[int]) -> int:
-        ans = 0
         sz = len(nums)
         # store sum[i]
         sum = [nums[0]]
         for n in nums[1:]:
             sum.append(sum[-1] + n)
+        left = [-1 for i in range(sz)]
+        right = [-1 for i in range(sz)]
+        for i in range(1, sz):
+            if nums[i] > nums[i-1]:
+                left[i] = i - 1
+            else:
+                j = left[i-1]
+                while j >= 0 and nums[j] >= nums[i]:
+                    j -= 1
+                left[i] = j
+        right[sz-1] = sz
+        for i in range(sz-2, -1, -1):
+            if nums[i] > nums[i+1]:
+                right[i] = i + 1
+            else:
+                j = right[i+1]
+                while j < sz and nums[j] >= nums[i]:
+                    j += 1
+                right[i] = j
+        ans = 0
         for i in range(sz):
-            left = i - 1
-            right = i + 1
-            while left >= 0 and nums[left] >= nums[i]:
-                left -= 1
-            while right < sz and nums[right] >= nums[i]:
-                right += 1
-            right = min(right, sz - 1)
-            total = nums[i] * (sum[right] - (sum[left] if left >= 0 else 0))
+            total = nums[i] * (sum[right[i]-1] - (sum[left[i]] if left[i] >= 0 else 0))
             ans = max(ans, total)
         ans %= INF
         return ans

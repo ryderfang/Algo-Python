@@ -39,7 +39,9 @@ if __name__ == "__main__":
     sol = cls()
     cases = load_testcase()
     for x in cases:
-        # 631781618
+        # 50
+        # case1 631781618
+        # case2 980357007
         print(len(x))
         print(sol.maxSumMinProduct(x))
 
