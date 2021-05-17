@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 1856
+PROBLEM_NO = 31
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -39,9 +39,5 @@ if __name__ == "__main__":
     sol = cls()
     cases = load_testcase()
     for x in cases:
-        # 50
-        # case1 631781618
-        # case2 980357007
-        # print(len(x))
-        print(sol.maxSumMinProduct(x))
+        print(sol.nextPermutation(x))
 
