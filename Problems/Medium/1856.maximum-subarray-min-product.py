@@ -7,7 +7,6 @@
 # @lc code=start
 
 INF = 10 ** 9 + 7
-from os import stat
 from typing import List
 class Solution:
     def maxSumMinProduct(self, nums: List[int]) -> int:
