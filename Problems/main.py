@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 31
+PROBLEM_NO = 33
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -37,7 +37,7 @@ def load_testcase():
 if __name__ == "__main__":
     load_module()
     sol = cls()
-    cases = load_testcase()
+    # cases = load_testcase()
+    cases = [[5,1,3], [1,3], [4,5,6,7,0,1,2,3]]
     for x in cases:
-        print(sol.nextPermutation(x))
-
+        print(sol.search(x, 3))
