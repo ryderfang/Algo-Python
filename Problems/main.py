@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 33
+PROBLEM_NO = 34
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -38,6 +38,11 @@ if __name__ == "__main__":
     load_module()
     sol = cls()
     # cases = load_testcase()
-    cases = [[5,1,3], [1,3], [4,5,6,7,0,1,2,3]]
+    cases = [
+        ([5,7,7,8,8,10], 8),
+        ([5,7,7,8,8,10], 6),
+        ([1,2,2,2,2,2,2,2,2,2,2,2,10], 2),
+        ([], 0)
+    ]
     for x in cases:
-        print(sol.search(x, 3))
+        print(sol.searchRange(x[0], x[1]))
