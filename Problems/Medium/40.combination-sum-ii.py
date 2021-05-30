@@ -8,12 +8,22 @@
 from typing import List
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        def getAns(candidates, target):
-            sz = len(candidates)
-            if sz == 0:
+        # opt, sort
+        candidates.sort()
+
+        sz = len(candidates)
+        total = [ 0 ] * (sz + 1)
+        i = sz - 1
+        for x in reversed(candidates):
+            total[i] = total[i+1] + x
+            i -= 1
+
+        def getAns(candidates, start, target):
+            nonlocal sz
+            if start == sz:
                 return []
-            x = candidates[0]
-            if sz == 1:
+            x = candidates[start]
+            if start == (sz - 1):
                 if target == x:
                     return [[x]]
                 else:
@@ -22,17 +32,21 @@ class Solution:
             if x > target:
                 return []
             else:
+                nonlocal total
+                # opt
+                if total[start] < target:
+                    return []
                 tmp = []
                 # pick x
                 if x < target:
-                    other = getAns(candidates[1:], target - x)
+                    other = getAns(candidates, start + 1, target - x)
                     if len(other) > 0:
                         for t in other:
                             tmp.append([x] + t)
                 else:
                     tmp.append([x])
                 # not pick x
-                other = getAns(candidates[1:], target)
+                other = getAns(candidates, start + 1, target)
                 if len(other) > 0:
                     tmp = tmp + other
                 
@@ -42,8 +56,6 @@ class Solution:
                 tmp = map(lambda x: list(x), tmp)
                 return list(tmp)
 
-        # opt, sort
-        candidates.sort()
-        return getAns(candidates, target)
+        return getAns(candidates, 0, target)
 # @lc code=end
 
