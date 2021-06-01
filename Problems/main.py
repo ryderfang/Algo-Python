@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 40
+PROBLEM_NO = 43
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -38,7 +38,10 @@ if __name__ == "__main__":
     load_module()
     sol = cls()
     # cases = load_testcase()
-    #for x in cases:
-    print(sol.combinationSum2([10,1,2,7,6,1,5], 8))
-    print(sol.combinationSum2([2,5,2,1,2], 5))
-    print(sol.combinationSum2([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 27))
+    cases = [
+        ("123", "456"),
+        ("0", "0"), 
+        ("12345678", "9876"),
+    ]
+    for x in cases:
+        print(sol.multiply(x[0], x[1]))
