@@ -12,5 +12,9 @@ def distinct_list(nums: List[int]):
     return list(set(nums))
 
 if __name__ == "__main__":
+    # enumerate
+    for i, v in enumerate([1, 2]):
+        print(i, v)
+
     print(distinct_list([1, 1, 2, 3, 4, 4]))
     print(distinct_nested_list([[1], [1, 2], [1, 2], [1, 2, 3]]))
