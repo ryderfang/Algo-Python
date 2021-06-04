@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 43
+PROBLEM_NO = 45
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -39,10 +39,8 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        #("123", "456"),
-        #("0", "0"), 
-        #("12345678", "9876"),
-        ("140", "721")
+        [2,3,1,1,4],
+        [2,3,0,1,4]
     ]
     for x in cases:
-        print(sol.multiply(x[0], x[1]))
+        print(sol.jump(x))
