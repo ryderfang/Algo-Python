@@ -15,6 +15,13 @@ if __name__ == "__main__":
     # enumerate
     for i, v in enumerate([1, 2]):
         print(i, v)
+    
+    # get min/max of list
+    print(min([1,2,3]))
+
+    # assign
+    a = [1, 2, 3]
+    a[1:3] = [0] * 2
 
     print(distinct_list([1, 1, 2, 3, 4, 4]))
     print(distinct_nested_list([[1], [1, 2], [1, 2], [1, 2, 3]]))

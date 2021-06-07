@@ -9,17 +9,18 @@ from typing import List
 class Solution:
     def jump(self, nums: List[int]) -> int:
         sz = len(nums)
-        ans = [0]
-        for i in range(sz):
-            # opt
-            if i == sz - 1:
-                return ans[i]
-            elif i + nums[i] >= sz - 1:
-                return ans[i] + 1
-            now = len(ans)
-            for j in range(now, i + nums[i] + 1):
-                ans.append(ans[i] + 1)
-        return ans[sz - 1]
+        if sz == 1:
+            return 0
+        ans = [0] * sz
+        tmp = 0
+        for i, n in enumerate(nums):
+            if i + n > tmp:
+                ans[tmp+1:i+n+1] = [ans[i] + 1] * (i+n-tmp)
+                tmp = i + n
+                # opt
+                if i + nums[i] >= sz - 1:
+                    break
+        return ans[-1]
     
 # @lc code=end
 
