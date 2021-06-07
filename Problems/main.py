@@ -40,7 +40,7 @@ if __name__ == "__main__":
     # cases = load_testcase()
     cases = [
         [2,3,1,1,4],
-        [2,3,0,1,4]
+        [2,1,0,1,4,1,2]
     ]
     for x in cases:
         print(sol.jump(x))

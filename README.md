@@ -6,7 +6,7 @@ My leetcode solutions.
 
 * Target: solve all medium problems.
 
-* Progress: 23/1073
+* Progress: 25/1073
 
 # Hint
 
