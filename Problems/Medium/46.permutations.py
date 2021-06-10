@@ -11,12 +11,10 @@ class Solution:
         sz = len(nums)
         ans = []
         def swap(i, j):
-            nonlocal nums
             tmp = nums[i]
             nums[i] = nums[j]
             nums[j] = tmp
         def get_next(start: int):
-            nonlocal nums
             if start == sz - 1:
                 ans.append(nums.copy())
             for i in range(start, sz):
