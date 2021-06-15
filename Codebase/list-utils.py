@@ -1,6 +1,7 @@
 #! /usr/local/bin/python3
 
 from typing import List
+from functools import reduce
 import itertools
 
 def distinct_nested_list(nested_lst: List[List[int]]):
@@ -14,6 +15,18 @@ def distinct_list(lst: List[int]):
 
 def permute(lst: List[int]):
     return [list(x) for x in list(itertools.permutations(lst))]
+
+#! reduce
+# def permute(self, nums: List[int]) -> List[List[int]]:
+#     def reduct_func(a: List[int], b: int):
+#         tmp = []
+#         print(a, b)
+#         for l in a:
+#             for i in range(len(l) + 1):
+#                 tmp.append(l[:i] + [b] + l[i:])
+#         return tmp
+#     ans = reduce(reduct_func, nums, [[]])
+#     return ans
 
 if __name__ == "__main__":
     # enumerate
