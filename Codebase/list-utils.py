@@ -1,15 +1,19 @@
 #! /usr/local/bin/python3
 
 from typing import List
+import itertools
 
-def distinct_nested_list(array: List[List[int]]):
-    array = map(lambda x: tuple(x), array)
-    array = list(set(array))
-    array = map(lambda x: list(x), array)
-    return list(array)
+def distinct_nested_list(nested_lst: List[List[int]]):
+    # array = set(map(lambda x: tuple(x), array))
+    # array = map(lambda x: list(x), array)
+    # return list(array)
+    return [list(y) for y in set([tuple(x) for x in nested_lst])]
 
-def distinct_list(nums: List[int]):
-    return list(set(nums))
+def distinct_list(lst: List[int]):
+    return list(set(lst))
+
+def permute(lst: List[int]):
+    return [list(x) for x in list(itertools.permutations(lst))]
 
 if __name__ == "__main__":
     # enumerate

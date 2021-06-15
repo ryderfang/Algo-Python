@@ -21,13 +21,12 @@ class Solution:
                 swap(i, start)
                 get_next(start + 1)
                 swap(i, start)
-        def distinct_nested_list(array: List[List[int]]):
-            array = map(lambda x: tuple(x), array)
-            array = list(set(array))
-            array = map(lambda x: list(x), array)
-            return list(array)
+        def distinct_nested_list(nested_lst: List[List[int]]):
+            return [list(y) for y in set([tuple(x) for x in nested_lst])]
         get_next(0)
         ans = distinct_nested_list(ans)
         return ans
 # @lc code=end
 
+# best solution:
+#  return reduce(lambda a,n:[l[:i]+[n]+l[i:] for l in a for i in range((l+[n]).index(n)+1)], nums,[[]])
