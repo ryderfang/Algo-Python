@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 46
+PROBLEM_NO = 47
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -40,8 +40,7 @@ if __name__ == "__main__":
     # cases = load_testcase()
     cases = [
         [1, 2, 3],
-        [0, 1],
-        [1]
+        [1, 1, 2],
     ]
     for x in cases:
-        print(sol.permute(x))
+        print(sol.permuteUnique(x))
