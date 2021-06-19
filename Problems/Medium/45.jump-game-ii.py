@@ -12,13 +12,14 @@ class Solution:
         if sz == 1:
             return 0
         ans = [0] * sz
+        # furthest pos
         tmp = 0
         for i, n in enumerate(nums):
             if i + n > tmp:
                 ans[tmp+1:i+n+1] = [ans[i] + 1] * (i+n-tmp)
                 tmp = i + n
                 # opt
-                if i + nums[i] >= sz - 1:
+                if i + n >= sz - 1:
                     break
         return ans[-1]
     
