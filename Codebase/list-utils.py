@@ -43,7 +43,11 @@ if __name__ == "__main__":
     print(list(map(lambda a: a ** 2, nums)))
     # reduce
     print(reduce(lambda a, b: a * b, nums))
-    
+
+    #sort
+    tmp = [[1,2], [3,4], [6, 5]]
+    tmp.sort(key=lambda x: x[0], reverse=True)
+
     # reverse
     print(nums[::-1])
     # swap

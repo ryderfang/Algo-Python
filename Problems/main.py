@@ -4,7 +4,7 @@ import glob, os
 from util import ListNode
 import json
 
-PROBLEM_NO = 55
+PROBLEM_NO = 56
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -39,8 +39,8 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [2,3,1,4,4],
-        [3,2,1,0,4],
+        [[8,10],[15,18],[1,3],[2,6]],
+        [[4,5],[1,4]],
     ]
     for x in cases:
-        print(sol.canJump(x))
+        print(sol.merge(x))
