@@ -1,10 +1,9 @@
 import importlib.util
 import inspect
 import glob, os
-from util import ListNode
 import json
 
-PROBLEM_NO = 57
+PROBLEM_NO = 59
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -38,12 +37,10 @@ if __name__ == "__main__":
     load_module()
     sol = cls()
     # cases = load_testcase()
-    # cases = [
-        
-    # ]
-    # for x in cases:
-    print(sol.insert([[1,3],[6,9]], [2,5]))
-    print(sol.insert([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]))
-    print(sol.insert([], [5,7]))
-    print(sol.insert([[1,5]], [2,3]))
-    print(sol.insert([[1,5]], [2,7]))
+    cases = [
+        4,
+        5,
+        6
+    ]
+    for x in cases:
+        print(sol.generateMatrix(x))

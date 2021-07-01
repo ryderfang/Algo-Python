@@ -44,6 +44,11 @@ if __name__ == "__main__":
     # reduce
     print(reduce(lambda a, b: a * b, nums))
 
+    # init nested list
+    nl = [x[:] for x in [[-1] * 10] * 10]
+    # [[-1] * 10] * 10 share same address of each row
+    nl[0][0] = 1
+
     #sort
     tmp = [[1,2], [3,4], [6, 5]]
     tmp.sort(key=lambda x: x[0], reverse=True)
