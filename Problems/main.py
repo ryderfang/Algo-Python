@@ -3,8 +3,8 @@ import inspect
 import glob, os
 import json
 
-PROBLEM_NO = 59
-PROBLEM_LV = '/Medium/'
+PROBLEM_NO = 41
+PROBLEM_LV = '/Hard/'
 cls = None
 
 def load_module():
@@ -38,9 +38,11 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        4,
-        5,
-        6
+        [2,1],
+        [1,2,0],
+        [3,4,-1,1],
+        [7,8,9,11,12],
+        list(range(500000))
     ]
     for x in cases:
-        print(sol.generateMatrix(x))
+        print(sol.firstMissingPositive(x))
