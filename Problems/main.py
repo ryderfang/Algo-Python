@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase.list_node import ListNode
 
-PROBLEM_NO = 61
+PROBLEM_NO = 63
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,8 +42,12 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [],
+        [[0,0,0],[0,1,0],[0,0,0]],
+        [[0,1],[0,0]],
+        [[0,0],[0,1]],
+        [[1]],
+        [[0,0]],
+        [[1,0]],
     ]
-    t = ListNode.node_linked_list([0,1,2])
     for x in cases:
-        print(sol.rotateRight(t, 4))
+        print(sol.uniquePathsWithObstacles(x))
