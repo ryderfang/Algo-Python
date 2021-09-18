@@ -2,9 +2,13 @@ import importlib.util
 import inspect
 import glob, os
 import json
+import sys
 
-PROBLEM_NO = 41
-PROBLEM_LV = '/Hard/'
+sys.path.append(os.getcwd())
+from Codebase.list_node import ListNode
+
+PROBLEM_NO = 61
+PROBLEM_LV = '/Medium/'
 cls = None
 
 def load_module():
@@ -38,11 +42,8 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [2,1],
-        [1,2,0],
-        [3,4,-1,1],
-        [7,8,9,11,12],
-        list(range(500000))
+        [],
     ]
+    t = ListNode.node_linked_list([0,1,2])
     for x in cases:
-        print(sol.firstMissingPositive(x))
+        print(sol.rotateRight(t, 4))

@@ -25,3 +25,6 @@ class ListNode:
             ans.append(head.val)
             head = head.next
         return ans
+
+if __name__ == "__main__":
+    pass
