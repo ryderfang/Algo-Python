@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase.list_node import ListNode
 
-PROBLEM_NO = 64
+PROBLEM_NO = 71
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,9 +42,10 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [[1,3,1],[1,5,1],[4,2,1]],
-        [[1,2,3],[4,5,6]],
-        [[1]],
+        "/home/",
+        "/../",
+        "/home//foo/",
+        "/a/./b/../../c/",
     ]
     for x in cases:
-        print(sol.minPathSum(x))
+        print(sol.simplifyPath(x))
