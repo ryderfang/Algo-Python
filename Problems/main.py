@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase.list_node import ListNode
 
-PROBLEM_NO = 73
+PROBLEM_NO = 74
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,8 +42,8 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [[1,1,1],[1,0,1],[1,1,1]],
-        [[0,1,2,0],[3,4,5,2],[1,3,1,5]],
+        [[[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3],
+        [[[1,3,5,7],[10,11,16,20],[23,30,34,60]], 13]
     ]
     for x in cases:
-        print(sol.setZeroes(x))
+        print(sol.searchMatrix(x[0], x[1]))
