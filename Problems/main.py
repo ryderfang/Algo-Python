@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase.list_node import ListNode
 
-PROBLEM_NO = 74
+PROBLEM_NO = 7
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -27,7 +27,7 @@ def load_module():
             break
 
 def load_testcase():
-    test_file = os.getcwd() + '/../Testcase/t' + str(PROBLEM_NO)
+    test_file = os.getcwd() + '/../Testcase/t' + str(PROBLEM_NO).zfill(2)
     lines = []
     with open(test_file) as f:
         lines = f.readlines()
@@ -40,10 +40,12 @@ def load_testcase():
 if __name__ == "__main__":
     load_module()
     sol = cls()
-    # cases = load_testcase()
-    cases = [
-        [[[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3],
-        [[[1,3,5,7],[10,11,16,20],[23,30,34,60]], 13]
-    ]
+    cases = load_testcase()
+    # cases = [
+    #     123,
+    #     -123,
+    #     120,
+    #     0,
+    # ]
     for x in cases:
-        print(sol.searchMatrix(x[0], x[1]))
+        print(sol.reverse(x))

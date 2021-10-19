@@ -13,7 +13,11 @@ if __name__ == "__main__":
 
     # 左除 0, 左补0
     print("000111".lstrip("0"))
+
     print("111".rjust(6, "0"))
+    print("111".zfill(6))
+    print("%06d" % 111)
     # 右除0，右补0
     print("11000".rstrip("0"))
+
     print("111".ljust(6, "0"))
