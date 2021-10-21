@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase.list_node import ListNode
 
-PROBLEM_NO = 7
+PROBLEM_NO = 75
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -40,12 +40,13 @@ def load_testcase():
 if __name__ == "__main__":
     load_module()
     sol = cls()
-    cases = load_testcase()
-    # cases = [
-    #     123,
-    #     -123,
-    #     120,
-    #     0,
-    # ]
+    # cases = load_testcase()
+    cases = [
+        [2,0,2,1,1,0],
+        [2,0,1],
+        [0],
+        [2,0,2,1,1,0,2,0,2,1,1,0,2,0,2,1,1,0],
+    ]
     for x in cases:
-        print(sol.reverse(x))
+        print(sol.sortColors(x))
+        print(x)
