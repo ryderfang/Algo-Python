@@ -5,9 +5,9 @@ import json
 import sys
 
 sys.path.append(os.getcwd())
-from Codebase.list_node import ListNode
+from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 77
+PROBLEM_NO = 78
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,10 +42,9 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [4, 2],
-        [10, 5]
+        [1, 2, 3],
+        [1]
     ]
     for x in cases:
-        ans = sol.combine(x[0], x[1])
+        ans = sol.subsets(x)
         print(ans)
-        print(len(ans))

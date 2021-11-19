@@ -9,8 +9,7 @@ from typing import List
 import itertools
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
-        tmp = [i for i in range(1, n + 1)]
-        return list(itertools.combinations(tmp, k))
+        return [list(x) for x in itertools.combinations(range(1, n + 1), k)]
         
 # @lc code=end
 
