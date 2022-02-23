@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 78
+PROBLEM_NO = 279
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,9 +42,12 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [1, 2, 3],
-        [1]
+        12,
+        13,
+        19,
+        100,
+        7777
     ]
     for x in cases:
-        ans = sol.subsets(x)
+        ans = sol.numSquares(x)
         print(ans)
