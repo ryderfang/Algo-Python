@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 279
+PROBLEM_NO = 79
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,12 +42,12 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        12,
-        13,
-        19,
-        100,
-        7777
+        ([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED"),
+        ([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "SEE"),
+        ([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCB"),
+        ([["C","A","A"],["A","A","A"],["B","C","D"]], "AAB"),
+        ([["A","B","C","E"],["S","F","E","S"],["A","D","E","E"]], "ABCESEEEFS")
     ]
     for x in cases:
-        ans = sol.numSquares(x)
+        ans = sol.exist(x[0], x[1])
         print(ans)
