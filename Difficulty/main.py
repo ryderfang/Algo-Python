@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 80
+PROBLEM_NO = 81
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,11 +42,11 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        # [1,1,1,2,2,3],
-        # [0,0,1,1,1,1,2,3,3],
-        # [1],
-        [0, 0, 0, 0, 0],
+        # ([1,0,1,1,1], 0),
+        # ([1], 0),
+        # ([1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1], 2)
+        ([4,5,6,7,0,1,2], 1)
     ]
     for x in cases:
-        ans = sol.removeDuplicates(x)
+        ans = sol.search(x[0], x[1])
         print(ans)
