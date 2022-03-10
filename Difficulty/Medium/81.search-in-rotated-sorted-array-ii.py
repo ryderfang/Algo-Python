@@ -10,7 +10,7 @@ class Solution:
     # samilar with p33
     def search(self, nums: List[int], target: int) -> bool:
         sz = len(nums)
-        # 有重复元素怎么二分找 k
+        # 有重复元素怎么二分找 k ?
         l = 0
         while l < sz - 2 and nums[l+1] >= nums[l]:
             l += 1

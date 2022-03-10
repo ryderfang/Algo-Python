@@ -1,9 +1,12 @@
 from typing import List
+
+# Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
     
+    # Array -> Listed-List
     @classmethod
     def node_linked_list(cls, data: List):
         if len(data) == 0:
@@ -18,6 +21,7 @@ class ListNode:
         p.next = None
         return head
     
+    # Listed-List -> Array
     @classmethod
     def list(cls, head):
         ans = []

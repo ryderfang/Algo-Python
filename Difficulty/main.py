@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 81
+PROBLEM_NO = 82
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -36,17 +36,14 @@ def load_testcase():
         ans.append(json.loads(l))
     return ans
 
-
 if __name__ == "__main__":
     load_module()
     sol = cls()
     # cases = load_testcase()
     cases = [
-        # ([1,0,1,1,1], 0),
-        # ([1], 0),
-        # ([1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1], 2)
-        ([4,5,6,7,0,1,2], 1)
+        [1,2,3,3,4,4,5],
+        [1,1,1,2,3],
     ]
     for x in cases:
-        ans = sol.search(x[0], x[1])
-        print(ans)
+        ans = sol.deleteDuplicates(ListNode.node_linked_list(x))
+        print(ListNode.list(ans))
