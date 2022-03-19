@@ -6,29 +6,29 @@
 
 # @lc code=start
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 from typing import Optional
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         ret = None
         pp = None
         p = head
-        q = p.next
-        while q != None:
-            dup = False
-            while q!= None and q.val == p.val:
-                dup = True
-                q = q.next
-            if ret == None:
-                ret = q if dup else head
-            
+        while p != None:
             q = p.next
+            if q != None and q.val == p.val:
+                while q.next != None and q.next.val == q.val:
+                    q = q.next
+                p = q.next
+                if pp != None:
+                    pp.next = p
+            else:
+                ret = p if ret == None else ret
+                pp = p
+                p = q
         return ret
-
-
         
 # @lc code=end
 

@@ -43,6 +43,9 @@ if __name__ == "__main__":
     cases = [
         [1,2,3,3,4,4,5],
         [1,1,1,2,3],
+        [1,1,2,2,3,3,4],
+        [1,1,1,2,2],
+        [],
     ]
     for x in cases:
         ans = sol.deleteDuplicates(ListNode.node_linked_list(x))
