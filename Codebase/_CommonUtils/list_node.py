@@ -8,7 +8,7 @@ class ListNode:
     
     # Array -> Listed-List
     @classmethod
-    def node_linked_list(cls, data: List):
+    def array_to_list(cls, data: List):
         if len(data) == 0:
             return None
         head = cls()
@@ -23,7 +23,7 @@ class ListNode:
     
     # Listed-List -> Array
     @classmethod
-    def list(cls, head):
+    def list_to_array(cls, head):
         ans = []
         while head != None:
             ans.append(head.val)

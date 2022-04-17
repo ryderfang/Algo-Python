@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 92
+PROBLEM_NO = 93
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -41,12 +41,10 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [[1,2,3,4,5], 2, 4],
-        [[5], 1, 1],
-        [[1,2,3,4,5], 1, 4],
-        [[1,2,3,4,5], 1, 5],
-        [[1,2,3,4,5], 2, 5],
+        '25525511135',
+        '0000',
+        '101023',
     ]
     for x in cases:
-        ans = sol.reverseBetween(ListNode.node_linked_list(x[0]), x[1], x[2])
-        print(ListNode.list(ans))
+        ans = sol.restoreIpAddresses(x)
+        print(ans)
