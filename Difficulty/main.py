@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 
-PROBLEM_NO = 90
+PROBLEM_NO = 91
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -41,10 +41,13 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        [3,3,1,0],
-        [1,2,2],
-        [0],
+        '12',
+        '06',
+        '101',
+        '226',
+        '2101',
+        '27',
     ]
     for x in cases:
-        ans = sol.subsetsWithDup(x)
+        ans = sol.numDecodings(x)
         print(ans)
