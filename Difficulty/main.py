@@ -6,8 +6,9 @@ import sys
 
 sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
+from Codebase._CommonUtils.tree_node import TreeNode
 
-PROBLEM_NO = 93
+PROBLEM_NO = 95
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -41,10 +42,11 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        '25525511135',
-        '0000',
-        '101023',
+        3,
+        # 1,
+        # 2,
     ]
     for x in cases:
-        ans = sol.restoreIpAddresses(x)
-        print(ans)
+        ans = sol.generateTrees(x)
+        for t in ans:
+            print(TreeNode.tree_to_array(t))
