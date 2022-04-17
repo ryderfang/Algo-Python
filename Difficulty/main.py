@@ -8,7 +8,7 @@ sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 from Codebase._CommonUtils.tree_node import TreeNode
 
-PROBLEM_NO = 95
+PROBLEM_NO = 96
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -43,10 +43,11 @@ if __name__ == "__main__":
     # cases = load_testcase()
     cases = [
         3,
-        # 1,
-        # 2,
+        1,
+        2,
+        10,
+        19,
     ]
     for x in cases:
-        ans = sol.generateTrees(x)
-        for t in ans:
-            print(TreeNode.tree_to_array(t))
+        ans = sol.numTrees(x)
+        print(ans)
