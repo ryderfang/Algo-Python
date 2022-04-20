@@ -8,7 +8,7 @@ sys.path.append(os.getcwd())
 from Codebase._CommonUtils.list_node import ListNode
 from Codebase._CommonUtils.tree_node import TreeNode
 
-PROBLEM_NO = 96
+PROBLEM_NO = 97
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -42,12 +42,12 @@ if __name__ == "__main__":
     sol = cls()
     # cases = load_testcase()
     cases = [
-        3,
-        1,
-        2,
-        10,
-        19,
+        ['aabac', 'dbbcc', 'aadbbcbcac'],
+        ['aabcc', 'dbbca', 'aadbbbaccc'],
+        ['', 'abc', 'abc'],
+        ['aacaac', 'aacaaeaac', 'aacaacaaeaacaac'],
+        ['cbcccbabbccbbcccbbbcabbbabcababbbbbbaccaccbabbaacbaabbbc', 'abcbbcaababccacbaaaccbabaabbaaabcbababbcccbbabbbcbbb', 'abcbcccbacbbbbccbcbcacacbbbbacabbbabbcacbcaabcbaaacbcbbbabbbaacacbbaaaabccbcbaabbbaaabbcccbcbabababbbcbbbcbb'],
     ]
     for x in cases:
-        ans = sol.numTrees(x)
+        ans = sol.isInterleave(x[0], x[1], x[2])
         print(ans)
