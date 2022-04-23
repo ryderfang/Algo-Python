@@ -8,7 +8,7 @@ sys.path.append(os.getcwd())
 from Codebase.List.list_node import ListNode
 from Codebase.Tree.tree_node import TreeNode
 
-PROBLEM_NO = 102
+PROBLEM_NO = 103
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     ]
     for x in cases:
         root = TreeNode.array_to_tree(x)
-        ans = sol.levelOrder(root)
+        ans = sol.zigzagLevelOrder(root)
         print(ans)
