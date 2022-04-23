@@ -5,10 +5,10 @@ import json
 import sys
 
 sys.path.append(os.getcwd())
-from Codebase._CommonUtils.list_node import ListNode
-from Codebase._CommonUtils.tree_node import TreeNode
+from Codebase.List.list_node import ListNode
+from Codebase.Tree.tree_node import TreeNode
 
-PROBLEM_NO = 99
+PROBLEM_NO = 102
 PROBLEM_LV = '/Medium/'
 cls = None
 
@@ -45,8 +45,9 @@ if __name__ == "__main__":
         [1,3,None,None,2],
         [3,1,4,None,None,2],
         [10,5,15,0,8,13,20,2,-5,6,9,12,14,18,25],
+        [3,9,20,None,None,15,7],
     ]
     for x in cases:
         root = TreeNode.array_to_tree(x)
-        ans = sol.recoverTree(root)
-        print(TreeNode.tree_to_array(root))
+        ans = sol.levelOrder(root)
+        print(ans)
